@@ -6,6 +6,7 @@ CATS2TANGO = {
     'TOOL_NUM_OR_NAME': 'Tool',
     'PATH_NAME': 'Path',
     'LID_NUM_SAMPLE_MOUNTED_ON_TOOL': 'LidSampleOnTool',
+    'LID_NUM_SAMPLE_MOUNTED_ON_TOOL2': 'LidSampleOnTool2',
     'NUM_SAMPLE_ON_TOOL': 'NumSampleOnTool',
     'PUCK_NUM_SAMPLE_MOUNTED_ON_TOOL': 'PuckNumberOnTool',
     'PUCK_NUM_SAMPLE_MOUNTED_ON_TOOL2': 'PuckNumberOnTool2',

@@ -1423,6 +1423,8 @@ class CS8Connection():
 
             if self.model is MODEL_ISARA and key == 'LID_NUM_SAMPLE_MOUNTED_ON_TOOL':
                 status_dict['PUCK_NUM_SAMPLE_MOUNTED_ON_TOOL'] = v
+            elif self.model is MODEL_ISARA and key == 'LID_NUM_SAMPLE_MOUNTED_ON_TOOL2':
+                status_dict['PUCK_NUM_SAMPLE_MOUNTED_ON_TOOL2'] = v
             elif self.model is MODEL_ISARA and key == 'LID_NUM_SAMPLE_MOUNTED_ON_DIFFRACTOMETER':
                 status_dict['PUCK_NUM_SAMPLE_MOUNTED_ON_DIFFRACTOMETER'] = v
             status_dict[key] = v

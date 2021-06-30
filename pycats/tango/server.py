@@ -152,6 +152,9 @@ class CATS(Device_4Impl):
         if self.cs8connection.get_model() == "ISARA":
             new_status += ' PuckNumberOnTool2(%s)' % self.status_dict[TANGO2CATS['PuckNumberOnTool2']]
             new_status += ' NumSampleOnTool2(%s)' % self.status_dict[TANGO2CATS['NumSampleOnTool2']]
+        else if (self.status_dict[TANGO2CATS['Tool']] == 'Double'):
+            new_status += ' LidNumberOnTool2(%s)' % self.status_dict[TANGO2CATS['LidNumberOnTool2']]
+            new_status += ' NumSampleOnTool2(%s)' % self.status_dict[TANGO2CATS['NumSampleOnTool2']]
         new_status += '\nBarcode(%s)' % self.status_dict[TANGO2CATS['Barcode']]
         if self.cs8connection.get_model() != "ISARA":
             new_status += '\nLidSampleOnDiff(%s)' % self.status_dict[TANGO2CATS['LidSampleOnDiff']]
@@ -281,11 +284,11 @@ class CATS(Device_4Impl):
     def read_PositionNumberDewar2(self, attr): attr.set_value(
         self.status_dict[TANGO2CATS['PositionNumberDewar2']])
 
-    def read_PuckNumberInTool2(self, attr): attr.set_value(
-        self.status_dict[TANGO2CATS['PuckNumberInTool2']])
+    def read_LidSampleOnTool2(self, attr): attr.set_value(
+        self.status_dict[TANGO2CATS['LidSampleOnTool2']])
 
-    def read_SampleNumberInTool2(self, attr): attr.set_value(
-        self.status_dict[TANGO2CATS['SampleNumberInTool2']])
+    def read_NumSampleOnTool2(self, attr): attr.set_value(
+        self.status_dict[TANGO2CATS['NumSampleOnTool2']])
 
     def read_CurrentNumberOfSoaking(self, attr): attr.set_value(
         self.status_dict[TANGO2CATS['CurrentNumberOfSoaking']])
@@ -1079,8 +1082,8 @@ class CATSClass(DeviceClass):
         'PuckDetectionDewar2': [[DevShort, SCALAR, READ]],
         'PositionNumberDewar1': [[DevShort, SCALAR, READ]],
         'PositionNumberDewar2': [[DevShort, SCALAR, READ]],
-        'PuckNumberInTool2': [[DevShort, SCALAR, READ]],
-        'SampleNumberInTool2': [[DevShort, SCALAR, READ]],
+        'LidSampleOnTool2': [[DevShort, SCALAR, READ]],
+        'NumSampleOnTool2': [[DevShort, SCALAR, READ]],
         'CurrentNumberOfSoaking': [[DevShort, SCALAR, READ]],
         'PuckTypeLid1': [[DevShort, SCALAR, READ]],
         'PuckTypeLid2': [[DevShort, SCALAR, READ]],
