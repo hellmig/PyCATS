@@ -152,8 +152,8 @@ class CATS(Device_4Impl):
         if self.cs8connection.get_model() == "ISARA":
             new_status += ' PuckNumberOnTool2(%s)' % self.status_dict[TANGO2CATS['PuckNumberOnTool2']]
             new_status += ' NumSampleOnTool2(%s)' % self.status_dict[TANGO2CATS['NumSampleOnTool2']]
-        else if (self.status_dict[TANGO2CATS['Tool']] == 'Double'):
-            new_status += ' LidNumberOnTool2(%s)' % self.status_dict[TANGO2CATS['LidNumberOnTool2']]
+        elif (self.status_dict[TANGO2CATS['Tool']] == 'Double'):
+            new_status += ' LidSampleOnTool2(%s)' % self.status_dict[TANGO2CATS['LidSampleOnTool2']]
             new_status += ' NumSampleOnTool2(%s)' % self.status_dict[TANGO2CATS['NumSampleOnTool2']]
         new_status += '\nBarcode(%s)' % self.status_dict[TANGO2CATS['Barcode']]
         if self.cs8connection.get_model() != "ISARA":
