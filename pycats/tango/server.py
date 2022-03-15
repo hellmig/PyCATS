@@ -787,6 +787,22 @@ class CATS(Device_4Impl):
             tool, toolcal = argin
             return self.cs8connection.back(tool, toolcal)
 
+    def backA(self, argin):
+        if self.cs8connection.get_model() == "ISARA":
+            tool = argin[0]
+            return self.cs8connection.backA(tool)
+        else:
+            tool, toolcal = argin
+            return self.cs8connection.backA(tool, toolcal)
+
+    def backB(self, argin):
+        if self.cs8connection.get_model() == "ISARA":
+            tool = argin[0]
+            return self.cs8connection.backB(tool)
+        else:
+            tool, toolcal = argin
+            return self.cs8connection.backB(tool, toolcal)
+
     def transfer(self, argin):
         if self.cs8connection.get_model() == "ISARA":
             return "Transfer command not available for ISARA model"
@@ -1367,6 +1383,8 @@ class CATSClass(DeviceClass):
         'getput_bcrd': [[DevVarStringArray, 'StringArray:\n0:tool = 0:Flange 1:Cryotong 2:EMBL/ESRF 3:Plates 4:Puck Detection 5:Double Gripper\n1:puck or lid number\n2:sample number\n3:type = 0:Actor 1:UniPuck (only cryotong)\n4:toolcal=0\n5:X_CATS shift (um)\n6:Y_CATS shift (um)\n7:Z_CATS shift (um)'], [DevString], ],
         'barcode': [[DevVarStringArray, 'StringArray:\n0:tool = 0:Flange 1:Cryotong 2:EMBL/ESRF 3:Plates 4:Puck Detection 5:Double Gripper\n1:puck or lid number\n2:new sample number\n3:type = 0:Actor 1:UniPuck (only cryotong)\n4:toolcal=0'], [DevString], ],
         'back': [[DevVarStringArray, 'tool = 0:Flange 1:Cryotong 2:EMBL/ESRF 3:Plates 4:Puck Detection 5:Double Gripper\n1:toolcal=0'], [DevString], ],
+        'backA': [[DevVarStringArray, 'tool = 0:Flange 1:Cryotong 2:EMBL/ESRF 3:Plates 4:Puck Detection 5:Double Gripper\n1:toolcal=0'], [DevString], ],
+        'backB': [[DevVarStringArray, 'tool = 0:Flange 1:Cryotong 2:EMBL/ESRF 3:Plates 4:Puck Detection 5:Double Gripper\n1:toolcal=0'], [DevString], ],
         'transfer': [[DevVarStringArray, 'StringArray:\n0:tool = 0:Flange 1:Cryotong 2:EMBL/ESRF 3:Plates 4:Puck Detection 5:Double Gripper\n1:puck or lid number\n2:sample number\n3:new puck or lid number\n4:new sample number\n5:type = 0:Actor 1:UniPuck (only cryotong)\n6:toolcal=0'], [DevString], ],
         'pick': [[DevVarStringArray, 'StringArray:\n5:Double Gripper\n1:puck or lid number\n2:sample number\n3:type = 0:Actor 1:UniPuck (only cryotong)'], [DevString], ],
         'getpuckpick': [[DevVarStringArray, 'StringArray:\n5:Double Gripper\n1:puck or lid number\n2:sample number\n3:type = 0:Actor 1:UniPuck (only cryotong)\n4:X_CATS shift (um)\n5:Y_CATS shift (um)\n6:Z_CATS shift (um)'], [DevString], ],

@@ -912,6 +912,18 @@ class CS8Connection():
         else:
             return self.trajectory('back', tool, 0, 0, 0, 0, 0, 0, 0, toolcal)
 
+    def backA(self, tool, toolcal=None):
+        if self.model is MODEL_ISARA:
+            return self.trajectory('backA', tool)
+        else:
+            return self.trajectory('backA', tool, 0, 0, 0, 0, 0, 0, 0, toolcal)
+
+    def backB(self, tool, toolcal=None):
+        if self.model is MODEL_ISARA:
+            return self.trajectory('backB', tool)
+        else:
+            return self.trajectory('backB', tool, 0, 0, 0, 0, 0, 0, 0, toolcal)
+
     def transfer(
             self,
             tool,
